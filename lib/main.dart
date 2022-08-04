@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git_project_management/view/second_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,7 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          setState(() {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondScreen(),
+                ));
+          });
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
